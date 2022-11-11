@@ -1,12 +1,16 @@
 //Show the player their options
 //Get input from the player 
-
+playersChoice = "rock"
 //Create a function that randomizes the choice of pc
 function getComputerChoice(){
+    //Generate a random number between 1-3
     let random = Math.random()
-    let one = 1
-    let two = 2
-    let three = 3
+    //If number == 1 pick paper
+    let one = "paper"
+    //If number == 2 pick rock
+    let two = "rock"
+    //if number == 3 pick scissors
+    let three = "scissors"
     if (random < 0.34){
         return one
     }
@@ -18,10 +22,27 @@ function getComputerChoice(){
         return three
     }
 }
-//Generate a random number between 1-3
-//If number == 1 pick paper
-//If number == 2 pick rock
-//if number == 3 pick scissors
-//Make elements strong/weak against each other
-//Compare the element chosen by the computer and the element chosen by the player
-//Output the winner
+function play(computer,player){
+    //Compare the element chosen by the computer and the element chosen by the player    
+    if (computer == "rock" && player == "paper" || computer == "paper" && player == "scissors" || computer == "scissors" && player == "rock")
+    {
+
+        //Output the winner
+        return `You won! ${player} beats ${computer}`
+    }
+    //Compare the element chosen by the computer and the element chosen by the player
+    else if (computer == "rock" && player == "rock" || computer == "paper" && player == "paper" || computer == "scissors" && player == "scissors")
+    {
+
+        //Output the winner
+        return `No one wins! You both chose ${player}`
+    }
+    else
+    {
+
+        //Output the winner
+        return `You lost! ${computer} beats ${player}`
+    }
+}
+
+
